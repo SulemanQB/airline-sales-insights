@@ -6,7 +6,7 @@ Sales and distribution analytics for **Southern Cross Air**, a fictional Austral
 2. **Model**: a DuckDB star schema (`sql/schema.sql`) with KPI views (`sql/views.sql`).
 3. **Analysis**: trend and change-point detection, variance to target, daily anomaly alerts and a backtested next-quarter forecast (`src/asi/analysis.py`).
 4. **Automated reporting**: one command rebuilds the Excel commercial pack and an HTML/PDF one-pager with quantified recommendations.
-5. **Power BI**: the star schema is exported as Parquet/CSV. [POWERBI.md](POWERBI.md) gives the model, the DAX measures and a page layout.
+5. **Power BI**: the star schema is exported as Parquet/CSV, and a ready-to-open Power BI Project (`.pbip`, TMDL model, five report pages) is in [`powerbi/`](powerbi/). [POWERBI.md](POWERBI.md) gives the model, the DAX measures and a page layout.
 
 All data is synthetic. Every number below is read from `output/findings.json` after `make all` with the default seed.
 
