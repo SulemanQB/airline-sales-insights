@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "airline-sales-insights"
+version = "1.0.0"
+description = "Sales and distribution analytics for a fictional airline: star schema, KPI views, trend detection, automated Excel/PDF reporting and Power BI exports."
+requires-python = ">=3.10"
+dependencies = ["duckdb>=1.0", "pandas>=2.1", "numpy>=1.26", "openpyxl>=3.1", "matplotlib>=3.8", "pyarrow>=14"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+asi = "asi.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
