@@ -1,0 +1,82 @@
+table dim_route
+	lineageTag: 6b38cd92-6d67-58b6-9816-891685a4a987
+
+	column route_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 50e669dd-426b-5376-b5ca-983f40ec67f5
+		summarizeBy: none
+		sourceColumn: route_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column route_code
+		dataType: string
+		lineageTag: f8e316b0-8ceb-519c-94a6-6253a71241a1
+		summarizeBy: none
+		sourceColumn: route_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column origin
+		dataType: string
+		lineageTag: 222e7bc7-ab26-54c8-a108-64459c8193a0
+		summarizeBy: none
+		sourceColumn: origin
+
+		annotation SummarizationSetBy = Automatic
+
+	column destination
+		dataType: string
+		lineageTag: 938ea48e-209b-5dd3-9a62-b0beebea6827
+		summarizeBy: none
+		sourceColumn: destination
+
+		annotation SummarizationSetBy = Automatic
+
+	column haul
+		dataType: string
+		lineageTag: e3ea73ab-bbe4-53c4-84fe-db89bbb9917a
+		summarizeBy: none
+		sourceColumn: haul
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_km
+		dataType: int64
+		formatString: 0
+		lineageTag: c719556a-bb4f-50cc-8a70-eef8a75143a6
+		summarizeBy: none
+		sourceColumn: distance_km
+
+		annotation SummarizationSetBy = Automatic
+
+	column daily_seats
+		dataType: int64
+		formatString: 0
+		lineageTag: cd2d42c6-313f-5e0d-aaaa-f592be56050d
+		summarizeBy: none
+		sourceColumn: daily_seats
+
+		annotation SummarizationSetBy = Automatic
+
+	column base_fare_aud
+		dataType: int64
+		formatString: 0
+		lineageTag: d9b4d47b-9ba6-5f54-9bfe-78f99201abef
+		summarizeBy: none
+		sourceColumn: base_fare_aud
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_route = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "dim_route.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"route_key", Int64.Type}, {"route_code", type text}, {"origin", type text}, {"destination", type text}, {"haul", type text}, {"distance_km", Int64.Type}, {"daily_seats", Int64.Type}, {"base_fare_aud", Int64.Type}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

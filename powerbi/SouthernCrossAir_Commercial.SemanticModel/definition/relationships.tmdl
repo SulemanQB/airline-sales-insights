@@ -1,0 +1,36 @@
+relationship 15e65bda-1c3f-5361-8811-a8b3947276e7
+	fromColumn: fact_booking.booking_date_key
+	toColumn: dim_date.date_key
+
+relationship 6c44998c-03cc-5960-8e33-2bbb28fb4474
+	isActive: false
+	fromColumn: fact_booking.travel_date_key
+	toColumn: dim_date.date_key
+
+relationship fec22cb4-0c1f-51d9-a018-e690d8cf1fc7
+	fromColumn: fact_booking.route_key
+	toColumn: dim_route.route_key
+
+relationship bdc76701-ede2-500c-8d31-8a46fe08c3db
+	fromColumn: fact_booking.channel_key
+	toColumn: dim_channel.channel_key
+
+relationship f1293b4a-d5e2-5aa8-9fe8-a546580fa1f0
+	fromColumn: fact_booking.fare_key
+	toColumn: dim_fare.fare_key
+
+relationship 0155cb02-0492-5b66-9cab-e74906dc42f0
+	fromColumn: fact_booking.pos_key
+	toColumn: dim_pos.pos_key
+
+relationship 240aeca2-92ec-5d84-8453-e8b06f65f5b9
+	fromColumn: fact_booking.segment_key
+	toColumn: dim_segment.segment_key
+
+relationship 9ce251cb-27ac-5b42-8aaa-11c8903d1db1
+	fromColumn: fact_target.month_date_key
+	toColumn: dim_date.date_key
+
+relationship 0f322c84-31a6-53c2-820e-6d61423e066e
+	fromColumn: fact_target.route_key
+	toColumn: dim_route.route_key

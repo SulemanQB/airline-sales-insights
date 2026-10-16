@@ -1,0 +1,6 @@
+expression DataFolder = "C:\Users\Public\Documents\airline-sales-insights\data\powerbi\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 87f1e5b8-ff65-5b8f-8e3b-895b52109618
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation

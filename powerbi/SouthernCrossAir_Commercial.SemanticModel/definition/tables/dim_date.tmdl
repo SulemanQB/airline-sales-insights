@@ -1,0 +1,113 @@
+table dim_date
+	lineageTag: 0aa0e357-6bc7-5855-9cf5-c8caeb717f3e
+	dataCategory: Time
+
+	column date_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: c04cb51b-f0c9-54ed-9ca8-3200688d3618
+		summarizeBy: none
+		sourceColumn: date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		isKey
+		formatString: dd/mm/yyyy
+		lineageTag: 608effa7-6295-50ab-b3a4-d007630a1a46
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: c112c964-6990-5646-af17-4e857da7bf4c
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		formatString: 0
+		lineageTag: 433a6c3c-9ed9-5e2b-92fb-7bdfcdff9531
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_month
+		dataType: string
+		lineageTag: b3f5da18-b7e7-5aab-89fc-3eacec9069cf
+		summarizeBy: none
+		sourceColumn: year_month
+		sortByColumn: month_start
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_start
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 5879c672-6d1c-55b9-b4ce-a9bba616c294
+		summarizeBy: none
+		sourceColumn: month_start
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 3fdd6079-76f3-51db-ad62-c319fafcfc8f
+		summarizeBy: none
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column fin_year
+		dataType: string
+		lineageTag: 022d2d87-6236-5774-bac8-78596946064d
+		summarizeBy: none
+		sourceColumn: fin_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_name
+		dataType: string
+		lineageTag: 76a32ed6-3a11-5c31-b5a0-e71671c357ea
+		summarizeBy: none
+		sourceColumn: day_name
+		sortByColumn: iso_dow
+
+		annotation SummarizationSetBy = Automatic
+
+	column iso_dow
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f327fde-a3c7-5dfb-a0e9-bf78f1fc1627
+		summarizeBy: none
+		sourceColumn: iso_dow
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekend
+		dataType: boolean
+		lineageTag: 5abf374e-a8ca-5f5e-8712-86364953a2dd
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "dim_date.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"date_key", Int64.Type}, {"date", type date}, {"year", Int64.Type}, {"month", Int64.Type}, {"year_month", type text}, {"month_start", type date}, {"quarter", Int64.Type}, {"fin_year", type text}, {"day_name", type text}, {"iso_dow", Int64.Type}, {"is_weekend", type logical}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

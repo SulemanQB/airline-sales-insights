@@ -1,5 +1,7 @@
 # Building the Power BI report (about an hour)
 
+> **Shortcut:** `powerbi/SouthernCrossAir_Commercial.pbip` is a ready-made Power BI Project with this whole model, every measure and the five pages already built. See [powerbi/OPEN_ME.md](powerbi/OPEN_ME.md): open it, set the `DataFolder` parameter, Refresh, and Save As `.pbix`. Regenerate it with `python scripts/build_pbip.py` and check it with `python scripts/check_pbip.py`.
+
 This builds a `.pbix` on Windows from the star schema the pipeline exports. You don't need Python: the Parquet files are committed in `data/powerbi/`. If you'd rather use CSV, run `make all` and take them from `output/powerbi/csv/`.
 
 ## 1. Load the tables (10 min)

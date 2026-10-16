@@ -1,0 +1,506 @@
+{
+  "config": "{\"version\": \"5.43\", \"themeCollection\": {\"baseTheme\": {\"name\": \"CY24SU06\", \"version\": \"5.55\", \"type\": 2}}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true, \"linguisticSchemaSyncVersion\": 0, \"settings\": {\"useNewFilterPaneExperience\": true, \"allowChangeFilterTypes\": true, \"useStylableVisualContainerHeader\": true, \"exportDataMode\": 1}, \"objects\": {\"outspacePane\": [{\"properties\": {\"expanded\": {\"expr\": {\"Literal\": {\"Value\": \"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "name": "SharedResources",
+        "type": 2,
+        "disabled": false,
+        "items": [
+          {
+            "type": 202,
+            "path": "BaseThemes/CY24SU06.json",
+            "name": "CY24SU06"
+          }
+        ]
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "ReportSection01",
+      "displayName": "Executive summary",
+      "ordinal": 0,
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 10,
+          "z": 0,
+          "width": 800,
+          "height": 50,
+          "config": "{\"name\": \"p1title\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 10, \"z\": 0, \"width\": 800, \"height\": 50}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"Executive summary\", \"textStyle\": {\"fontWeight\": \"bold\", \"fontSize\": \"18pt\", \"color\": \"#14365D\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 70,
+          "z": 0,
+          "width": 300,
+          "height": 60,
+          "config": "{\"name\": \"p1s1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 70, \"z\": 0, \"width\": 300, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_date.month_start\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}, \"Name\": \"dim_date.month_start\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Between'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Booking month'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 330,
+          "y": 70,
+          "z": 0,
+          "width": 150,
+          "height": 60,
+          "config": "{\"name\": \"p1s2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 330, \"y\": 70, \"z\": 0, \"width\": 150, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_date.fin_year\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"fin_year\"}, \"Name\": \"dim_date.fin_year\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Financial year'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 490,
+          "y": 70,
+          "z": 0,
+          "width": 160,
+          "height": 60,
+          "config": "{\"name\": \"p1s3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 490, \"y\": 70, \"z\": 0, \"width\": 160, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_route.route_code\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dim_route\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"route_code\"}, \"Name\": \"dim_route.route_code\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Route'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 660,
+          "y": 70,
+          "z": 0,
+          "width": 180,
+          "height": 60,
+          "config": "{\"name\": \"p1s4\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 660, \"y\": 70, \"z\": 0, \"width\": 180, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_channel.channel\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_channel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"channel\"}, \"Name\": \"dim_channel.channel\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Channel'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 850,
+          "y": 70,
+          "z": 0,
+          "width": 200,
+          "height": 60,
+          "config": "{\"name\": \"p1s5\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 850, \"y\": 70, \"z\": 0, \"width\": 200, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_route.haul\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dim_route\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"haul\"}, \"Name\": \"dim_route.haul\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Haul'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1060,
+          "y": 70,
+          "z": 0,
+          "width": 200,
+          "height": 60,
+          "config": "{\"name\": \"p1s6\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1060, \"y\": 70, \"z\": 0, \"width\": 200, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_segment.segment\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"s\", \"Entity\": \"dim_segment\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"segment\"}, \"Name\": \"dim_segment.segment\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Segment'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 145,
+          "z": 0,
+          "width": 197,
+          "height": 110,
+          "config": "{\"name\": \"p1c0\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 145, \"z\": 0, \"width\": 197, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Total Revenue'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 227,
+          "y": 145,
+          "z": 0,
+          "width": 197,
+          "height": 110,
+          "config": "{\"name\": \"p1c1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 227, \"y\": 145, \"z\": 0, \"width\": 197, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.YoY %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"YoY %\"}, \"Name\": \"_Measures.YoY %\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'YoY %'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 434,
+          "y": 145,
+          "z": 0,
+          "width": 197,
+          "height": 110,
+          "config": "{\"name\": \"p1c2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 434, \"y\": 145, \"z\": 0, \"width\": 197, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Net Revenue After Distribution\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Net Revenue After Distribution\"}, \"Name\": \"_Measures.Net Revenue After Distribution\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Net Revenue After Distribution'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 641,
+          "y": 145,
+          "z": 0,
+          "width": 197,
+          "height": 110,
+          "config": "{\"name\": \"p1c3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 641, \"y\": 145, \"z\": 0, \"width\": 197, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Target Attainment\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Target Attainment\"}, \"Name\": \"_Measures.Target Attainment\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Target Attainment'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 848,
+          "y": 145,
+          "z": 0,
+          "width": 197,
+          "height": 110,
+          "config": "{\"name\": \"p1c4\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 848, \"y\": 145, \"z\": 0, \"width\": 197, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Cost of Sale %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Cost of Sale %\"}, \"Name\": \"_Measures.Cost of Sale %\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Cost of Sale %'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1055,
+          "y": 145,
+          "z": 0,
+          "width": 197,
+          "height": 110,
+          "config": "{\"name\": \"p1c5\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1055, \"y\": 145, \"z\": 0, \"width\": 197, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"_Measures.Yield (c/RPK)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Yield (c/RPK)\"}, \"Name\": \"_Measures.Yield (c/RPK)\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Yield (c/RPK)'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 270,
+          "z": 0,
+          "width": 1240,
+          "height": 430,
+          "config": "{\"name\": \"p1combo\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 270, \"z\": 0, \"width\": 1240, \"height\": 430}}], \"singleVisual\": {\"visualType\": \"lineClusteredColumnComboChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_date.month_start\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Revenue\"}], \"Y2\": [{\"queryRef\": \"_Measures.Target Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}, \"Name\": \"dim_date.month_start\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Target Revenue\"}, \"Name\": \"_Measures.Target Revenue\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Revenue vs target by month'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection02",
+      "displayName": "Channel and distribution",
+      "ordinal": 1,
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 10,
+          "z": 0,
+          "width": 800,
+          "height": 50,
+          "config": "{\"name\": \"p2title\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 10, \"z\": 0, \"width\": 800, \"height\": 50}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"Channel and distribution\", \"textStyle\": {\"fontWeight\": \"bold\", \"fontSize\": \"18pt\", \"color\": \"#14365D\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 70,
+          "z": 0,
+          "width": 300,
+          "height": 60,
+          "config": "{\"name\": \"p2s1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 70, \"z\": 0, \"width\": 300, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_date.month_start\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}, \"Name\": \"dim_date.month_start\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Between'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Booking month'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 330,
+          "y": 70,
+          "z": 0,
+          "width": 150,
+          "height": 60,
+          "config": "{\"name\": \"p2s2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 330, \"y\": 70, \"z\": 0, \"width\": 150, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_date.fin_year\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"fin_year\"}, \"Name\": \"dim_date.fin_year\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Financial year'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 490,
+          "y": 70,
+          "z": 0,
+          "width": 160,
+          "height": 60,
+          "config": "{\"name\": \"p2s3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 490, \"y\": 70, \"z\": 0, \"width\": 160, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_route.route_code\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dim_route\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"route_code\"}, \"Name\": \"dim_route.route_code\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Route'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 660,
+          "y": 70,
+          "z": 0,
+          "width": 180,
+          "height": 60,
+          "config": "{\"name\": \"p2s4\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 660, \"y\": 70, \"z\": 0, \"width\": 180, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_channel.channel\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_channel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"channel\"}, \"Name\": \"dim_channel.channel\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Channel'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 145,
+          "z": 0,
+          "width": 620,
+          "height": 300,
+          "config": "{\"name\": \"p2mix\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 145, \"z\": 0, \"width\": 620, \"height\": 300}}], \"singleVisual\": {\"visualType\": \"hundredPercentStackedColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_date.month_start\", \"active\": true}], \"Series\": [{\"queryRef\": \"dim_channel.channel\"}], \"Y\": [{\"queryRef\": \"_Measures.Channel Share\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}, {\"Name\": \"c\", \"Entity\": \"dim_channel\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}, \"Name\": \"dim_date.month_start\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"channel\"}, \"Name\": \"dim_channel.channel\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Channel Share\"}, \"Name\": \"_Measures.Channel Share\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Channel mix (share of revenue)'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 650,
+          "y": 145,
+          "z": 0,
+          "width": 610,
+          "height": 300,
+          "config": "{\"name\": \"p2ndc\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 650, \"y\": 145, \"z\": 0, \"width\": 610, \"height\": 300}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_date.month_start\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.NDC Share of Indirect\"}], \"Y2\": [{\"queryRef\": \"_Measures.Cost of Sale %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}, \"Name\": \"dim_date.month_start\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"NDC Share of Indirect\"}, \"Name\": \"_Measures.NDC Share of Indirect\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Cost of Sale %\"}, \"Name\": \"_Measures.Cost of Sale %\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'NDC share of indirect bookings and cost of sale'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 455,
+          "z": 0,
+          "width": 1240,
+          "height": 250,
+          "config": "{\"name\": \"p2mat\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 455, \"z\": 0, \"width\": 1240, \"height\": 250}}], \"singleVisual\": {\"visualType\": \"pivotTable\", \"projections\": {\"Rows\": [{\"queryRef\": \"dim_channel.channel\", \"active\": true}, {\"queryRef\": \"dim_channel.connection\"}], \"Values\": [{\"queryRef\": \"_Measures.Bookings\"}, {\"queryRef\": \"_Measures.Total Revenue\"}, {\"queryRef\": \"_Measures.Cost per Booking\"}, {\"queryRef\": \"_Measures.Cost of Sale %\"}, {\"queryRef\": \"_Measures.Ancillary Attach Rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_channel\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"channel\"}, \"Name\": \"dim_channel.channel\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"connection\"}, \"Name\": \"dim_channel.connection\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Bookings\"}, \"Name\": \"_Measures.Bookings\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Cost per Booking\"}, \"Name\": \"_Measures.Cost per Booking\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Cost of Sale %\"}, \"Name\": \"_Measures.Cost of Sale %\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Ancillary Attach Rate\"}, \"Name\": \"_Measures.Ancillary Attach Rate\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"values\": [{\"properties\": {\"backColor\": {\"solid\": {\"color\": {\"expr\": {\"FillRule\": {\"Input\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Cost of Sale %\"}}, \"FillRule\": {\"linearGradient3\": {\"min\": {\"color\": {\"Literal\": {\"Value\": \"'#1B9AAA'\"}}, \"value\": {\"Literal\": {\"Value\": \"0.01D\"}}}, \"mid\": {\"color\": {\"Literal\": {\"Value\": \"'#F2A541'\"}}, \"value\": {\"Literal\": {\"Value\": \"0.04D\"}}}, \"max\": {\"color\": {\"Literal\": {\"Value\": \"'#D64550'\"}}, \"value\": {\"Literal\": {\"Value\": \"0.08D\"}}}, \"nullColoringStrategy\": {\"strategy\": {\"Literal\": {\"Value\": \"'asZero'\"}}}}}}}}}}}, \"selector\": {\"data\": [{\"dataViewWildcard\": {\"matchingOption\": 1}}], \"metadata\": \"_Measures.Cost of Sale %\"}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Channel economics'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection03",
+      "displayName": "Route performance",
+      "ordinal": 2,
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 10,
+          "z": 0,
+          "width": 800,
+          "height": 50,
+          "config": "{\"name\": \"p3title\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 10, \"z\": 0, \"width\": 800, \"height\": 50}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"Route performance\", \"textStyle\": {\"fontWeight\": \"bold\", \"fontSize\": \"18pt\", \"color\": \"#14365D\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 70,
+          "z": 0,
+          "width": 300,
+          "height": 60,
+          "config": "{\"name\": \"p3s1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 70, \"z\": 0, \"width\": 300, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_date.month_start\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}, \"Name\": \"dim_date.month_start\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Between'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Booking month'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 330,
+          "y": 70,
+          "z": 0,
+          "width": 150,
+          "height": 60,
+          "config": "{\"name\": \"p3s2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 330, \"y\": 70, \"z\": 0, \"width\": 150, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_date.fin_year\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"fin_year\"}, \"Name\": \"dim_date.fin_year\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Financial year'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 490,
+          "y": 70,
+          "z": 0,
+          "width": 160,
+          "height": 60,
+          "config": "{\"name\": \"p3s3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 490, \"y\": 70, \"z\": 0, \"width\": 160, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_route.route_code\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dim_route\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"route_code\"}, \"Name\": \"dim_route.route_code\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Route'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 660,
+          "y": 70,
+          "z": 0,
+          "width": 180,
+          "height": 60,
+          "config": "{\"name\": \"p3s4\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 660, \"y\": 70, \"z\": 0, \"width\": 180, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_channel.channel\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_channel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"channel\"}, \"Name\": \"dim_channel.channel\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Channel'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 145,
+          "z": 0,
+          "width": 400,
+          "height": 560,
+          "config": "{\"name\": \"p3bar\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 145, \"z\": 0, \"width\": 400, \"height\": 560}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_route.route_code\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Target Attainment\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dim_route\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"route_code\"}, \"Name\": \"dim_route.route_code\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Target Attainment\"}, \"Name\": \"_Measures.Target Attainment\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Target Attainment\"}}}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"FillRule\": {\"Input\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Target Attainment\"}}, \"FillRule\": {\"linearGradient3\": {\"min\": {\"color\": {\"Literal\": {\"Value\": \"'#D64550'\"}}, \"value\": {\"Literal\": {\"Value\": \"0.85D\"}}}, \"mid\": {\"color\": {\"Literal\": {\"Value\": \"'#F2A541'\"}}, \"value\": {\"Literal\": {\"Value\": \"0.95D\"}}}, \"max\": {\"color\": {\"Literal\": {\"Value\": \"'#1B9AAA'\"}}, \"value\": {\"Literal\": {\"Value\": \"1.05D\"}}}, \"nullColoringStrategy\": {\"strategy\": {\"Literal\": {\"Value\": \"'asZero'\"}}}}}}}}}}}, \"selector\": {\"data\": [{\"dataViewWildcard\": {\"matchingOption\": 1}}]}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Target attainment by route'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 430,
+          "y": 145,
+          "z": 0,
+          "width": 830,
+          "height": 270,
+          "config": "{\"name\": \"p3tab\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 430, \"y\": 145, \"z\": 0, \"width\": 830, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_route.route_code\"}, {\"queryRef\": \"dim_route.haul\"}, {\"queryRef\": \"_Measures.Total Revenue\"}, {\"queryRef\": \"_Measures.Target Revenue\"}, {\"queryRef\": \"_Measures.Variance to Target\"}, {\"queryRef\": \"_Measures.Target Attainment\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dim_route\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"route_code\"}, \"Name\": \"dim_route.route_code\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"haul\"}, \"Name\": \"dim_route.haul\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Target Revenue\"}, \"Name\": \"_Measures.Target Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Variance to Target\"}, \"Name\": \"_Measures.Variance to Target\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Target Attainment\"}, \"Name\": \"_Measures.Target Attainment\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"values\": [{\"properties\": {\"backColor\": {\"solid\": {\"color\": {\"expr\": {\"FillRule\": {\"Input\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Target Attainment\"}}, \"FillRule\": {\"linearGradient3\": {\"min\": {\"color\": {\"Literal\": {\"Value\": \"'#D64550'\"}}, \"value\": {\"Literal\": {\"Value\": \"0.85D\"}}}, \"mid\": {\"color\": {\"Literal\": {\"Value\": \"'#F2A541'\"}}, \"value\": {\"Literal\": {\"Value\": \"0.95D\"}}}, \"max\": {\"color\": {\"Literal\": {\"Value\": \"'#1B9AAA'\"}}, \"value\": {\"Literal\": {\"Value\": \"1.05D\"}}}, \"nullColoringStrategy\": {\"strategy\": {\"Literal\": {\"Value\": \"'asZero'\"}}}}}}}}}}}, \"selector\": {\"data\": [{\"dataViewWildcard\": {\"matchingOption\": 1}}], \"metadata\": \"_Measures.Target Attainment\"}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Route attainment'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 430,
+          "y": 425,
+          "z": 0,
+          "width": 500,
+          "height": 280,
+          "config": "{\"name\": \"p3mat\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 430, \"y\": 425, \"z\": 0, \"width\": 500, \"height\": 280}}], \"singleVisual\": {\"visualType\": \"pivotTable\", \"projections\": {\"Rows\": [{\"queryRef\": \"dim_route.route_code\", \"active\": true}], \"Columns\": [{\"queryRef\": \"dim_date.year_month\"}], \"Values\": [{\"queryRef\": \"_Measures.Variance to Target\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dim_route\", \"Type\": 0}, {\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"route_code\"}, \"Name\": \"dim_route.route_code\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"year_month\"}, \"Name\": \"dim_date.year_month\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Variance to Target\"}, \"Name\": \"_Measures.Variance to Target\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"values\": [{\"properties\": {\"backColor\": {\"solid\": {\"color\": {\"expr\": {\"FillRule\": {\"Input\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Variance to Target\"}}, \"FillRule\": {\"linearGradient3\": {\"min\": {\"color\": {\"Literal\": {\"Value\": \"'#D64550'\"}}, \"value\": {\"Literal\": {\"Value\": \"-150000D\"}}}, \"mid\": {\"color\": {\"Literal\": {\"Value\": \"'#F2A541'\"}}, \"value\": {\"Literal\": {\"Value\": \"0D\"}}}, \"max\": {\"color\": {\"Literal\": {\"Value\": \"'#1B9AAA'\"}}, \"value\": {\"Literal\": {\"Value\": \"150000D\"}}}, \"nullColoringStrategy\": {\"strategy\": {\"Literal\": {\"Value\": \"'asZero'\"}}}}}}}}}}}, \"selector\": {\"data\": [{\"dataViewWildcard\": {\"matchingOption\": 1}}], \"metadata\": \"_Measures.Variance to Target\"}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Variance to target by route and month'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 940,
+          "y": 425,
+          "z": 0,
+          "width": 320,
+          "height": 280,
+          "config": "{\"name\": \"p3sc\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 940, \"y\": 425, \"z\": 0, \"width\": 320, \"height\": 280}}], \"singleVisual\": {\"visualType\": \"scatterChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_route.route_code\", \"active\": true}], \"X\": [{\"queryRef\": \"_Measures.Yield (c/RPK)\"}], \"Y\": [{\"queryRef\": \"_Measures.RASK Proxy (c/ASK)\"}], \"Size\": [{\"queryRef\": \"_Measures.Passengers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dim_route\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"route_code\"}, \"Name\": \"dim_route.route_code\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Yield (c/RPK)\"}, \"Name\": \"_Measures.Yield (c/RPK)\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"RASK Proxy (c/ASK)\"}, \"Name\": \"_Measures.RASK Proxy (c/ASK)\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Passengers\"}, \"Name\": \"_Measures.Passengers\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Yield vs RASK proxy'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection04",
+      "displayName": "Customer and booking curve",
+      "ordinal": 3,
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 10,
+          "z": 0,
+          "width": 800,
+          "height": 50,
+          "config": "{\"name\": \"p4title\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 10, \"z\": 0, \"width\": 800, \"height\": 50}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"Customer and booking curve\", \"textStyle\": {\"fontWeight\": \"bold\", \"fontSize\": \"18pt\", \"color\": \"#14365D\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 70,
+          "z": 0,
+          "width": 300,
+          "height": 60,
+          "config": "{\"name\": \"p4s1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 70, \"z\": 0, \"width\": 300, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_date.month_start\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}, \"Name\": \"dim_date.month_start\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Between'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Booking month'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 330,
+          "y": 70,
+          "z": 0,
+          "width": 150,
+          "height": 60,
+          "config": "{\"name\": \"p4s2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 330, \"y\": 70, \"z\": 0, \"width\": 150, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_date.fin_year\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"fin_year\"}, \"Name\": \"dim_date.fin_year\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Financial year'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 490,
+          "y": 70,
+          "z": 0,
+          "width": 160,
+          "height": 60,
+          "config": "{\"name\": \"p4s3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 490, \"y\": 70, \"z\": 0, \"width\": 160, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_route.route_code\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dim_route\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"route_code\"}, \"Name\": \"dim_route.route_code\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Route'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 660,
+          "y": 70,
+          "z": 0,
+          "width": 180,
+          "height": 60,
+          "config": "{\"name\": \"p4s4\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 660, \"y\": 70, \"z\": 0, \"width\": 180, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_channel.channel\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_channel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"channel\"}, \"Name\": \"dim_channel.channel\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Channel'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 145,
+          "z": 0,
+          "width": 620,
+          "height": 280,
+          "config": "{\"name\": \"p4col\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 145, \"z\": 0, \"width\": 620, \"height\": 280}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_booking.Lead Bucket\", \"active\": true}], \"Series\": [{\"queryRef\": \"dim_segment.segment\"}], \"Y\": [{\"queryRef\": \"_Measures.Passengers\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"fact_booking\", \"Type\": 0}, {\"Name\": \"s\", \"Entity\": \"dim_segment\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"Lead Bucket\"}, \"Name\": \"fact_booking.Lead Bucket\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"s\"}}, \"Property\": \"segment\"}, \"Name\": \"dim_segment.segment\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Passengers\"}, \"Name\": \"_Measures.Passengers\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"Lead Bucket\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Passengers by lead time and segment'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 650,
+          "y": 145,
+          "z": 0,
+          "width": 610,
+          "height": 280,
+          "config": "{\"name\": \"p4line\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 650, \"y\": 145, \"z\": 0, \"width\": 610, \"height\": 280}}], \"singleVisual\": {\"visualType\": \"lineChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_booking.Lead Bucket\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Avg Fare per Pax\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"b\", \"Entity\": \"fact_booking\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"Lead Bucket\"}, \"Name\": \"fact_booking.Lead Bucket\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Avg Fare per Pax\"}, \"Name\": \"_Measures.Avg Fare per Pax\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"b\"}}, \"Property\": \"Lead Bucket\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Average fare per passenger by lead time'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 435,
+          "z": 0,
+          "width": 1240,
+          "height": 270,
+          "config": "{\"name\": \"p4pos\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 435, \"z\": 0, \"width\": 1240, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_pos.pos_country\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"p\", \"Entity\": \"dim_pos\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"p\"}}, \"Property\": \"pos_country\"}, \"Name\": \"dim_pos.pos_country\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Revenue by point of sale'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "ReportSection05",
+      "displayName": "Route detail",
+      "ordinal": 4,
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 10,
+          "z": 0,
+          "width": 800,
+          "height": 50,
+          "config": "{\"name\": \"p5title\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 10, \"z\": 0, \"width\": 800, \"height\": 50}}], \"singleVisual\": {\"visualType\": \"textbox\", \"drillFilterOtherVisuals\": true, \"objects\": {\"general\": [{\"properties\": {\"paragraphs\": [{\"textRuns\": [{\"value\": \"Route detail (pick a route)\", \"textStyle\": {\"fontWeight\": \"bold\", \"fontSize\": \"18pt\", \"color\": \"#14365D\"}}]}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 70,
+          "z": 0,
+          "width": 300,
+          "height": 60,
+          "config": "{\"name\": \"p5s1\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 70, \"z\": 0, \"width\": 300, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_date.month_start\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}, \"Name\": \"dim_date.month_start\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Between'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Booking month'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 330,
+          "y": 70,
+          "z": 0,
+          "width": 150,
+          "height": 60,
+          "config": "{\"name\": \"p5s2\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 330, \"y\": 70, \"z\": 0, \"width\": 150, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_date.fin_year\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"fin_year\"}, \"Name\": \"dim_date.fin_year\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Financial year'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 490,
+          "y": 70,
+          "z": 0,
+          "width": 160,
+          "height": 60,
+          "config": "{\"name\": \"p5s3\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 490, \"y\": 70, \"z\": 0, \"width\": 160, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_route.route_code\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"r\", \"Entity\": \"dim_route\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"r\"}}, \"Property\": \"route_code\"}, \"Name\": \"dim_route.route_code\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Route'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 660,
+          "y": 70,
+          "z": 0,
+          "width": 180,
+          "height": 60,
+          "config": "{\"name\": \"p5s4\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 660, \"y\": 70, \"z\": 0, \"width\": 180, \"height\": 60}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_channel.channel\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_channel\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"channel\"}, \"Name\": \"dim_channel.channel\"}]}, \"drillFilterOtherVisuals\": true, \"objects\": {\"data\": [{\"properties\": {\"mode\": {\"expr\": {\"Literal\": {\"Value\": \"'Dropdown'\"}}}}}]}, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Channel'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 145,
+          "z": 0,
+          "width": 1240,
+          "height": 280,
+          "config": "{\"name\": \"p5trend\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 145, \"z\": 0, \"width\": 1240, \"height\": 280}}], \"singleVisual\": {\"visualType\": \"lineClusteredColumnComboChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_date.month_start\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Revenue\"}], \"Y2\": [{\"queryRef\": \"_Measures.Target Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"d\", \"Entity\": \"dim_date\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}, \"Name\": \"dim_date.month_start\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Target Revenue\"}, \"Name\": \"_Measures.Target Revenue\"}], \"OrderBy\": [{\"Direction\": 1, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"d\"}}, \"Property\": \"month_start\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Monthly revenue vs target'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 435,
+          "z": 0,
+          "width": 610,
+          "height": 270,
+          "config": "{\"name\": \"p5ch\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 435, \"z\": 0, \"width\": 610, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_channel.channel\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"c\", \"Entity\": \"dim_channel\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"c\"}}, \"Property\": \"channel\"}, \"Name\": \"dim_channel.channel\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Channel mix'\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 650,
+          "y": 435,
+          "z": 0,
+          "width": 610,
+          "height": 270,
+          "config": "{\"name\": \"p5fare\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 650, \"y\": 435, \"z\": 0, \"width\": 610, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_fare.fare_family\", \"active\": true}], \"Y\": [{\"queryRef\": \"_Measures.Total Revenue\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"dim_fare\", \"Type\": 0}, {\"Name\": \"m\", \"Entity\": \"_Measures\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"fare_family\"}, \"Name\": \"dim_fare.fare_family\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"m\"}}, \"Property\": \"Total Revenue\"}, \"Name\": \"_Measures.Total Revenue\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Fare family mix'\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    }
+  ],
+  "filters": "[]"
+}

@@ -1,0 +1,73 @@
+table dim_channel
+	lineageTag: 6a01a7a0-dafc-55af-8d93-42f6b9afa312
+
+	column channel_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: dc20f5f7-65e7-554c-893e-f4bbc7da1288
+		summarizeBy: none
+		sourceColumn: channel_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel_code
+		dataType: string
+		lineageTag: eeea69ac-4f34-55bd-9deb-05589bc2db12
+		summarizeBy: none
+		sourceColumn: channel_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel
+		dataType: string
+		lineageTag: 930dfb30-d249-5e96-b5ee-6d6056504abd
+		summarizeBy: none
+		sourceColumn: channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel_group
+		dataType: string
+		lineageTag: 1735214f-2d11-5a9f-966b-258f41b0a2c5
+		summarizeBy: none
+		sourceColumn: channel_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column connection
+		dataType: string
+		lineageTag: a4d27e82-7eef-5c95-b926-f43f8195564e
+		summarizeBy: none
+		sourceColumn: connection
+
+		annotation SummarizationSetBy = Automatic
+
+	column commission_pct
+		dataType: double
+		formatString: 0
+		lineageTag: a91e3420-feb7-5bde-8009-c5459d1cf8be
+		summarizeBy: sum
+		sourceColumn: commission_pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column fee_per_segment_aud
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 95738586-4330-5e09-8b0a-d6c1edf4930b
+		summarizeBy: sum
+		sourceColumn: fee_per_segment_aud
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_channel = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "dim_channel.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"channel_key", Int64.Type}, {"channel_code", type text}, {"channel", type text}, {"channel_group", type text}, {"connection", type text}, {"commission_pct", type number}, {"fee_per_segment_aud", Currency.Type}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

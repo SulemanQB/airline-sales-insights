@@ -1,0 +1,162 @@
+table fact_booking
+	lineageTag: f8627ffd-d020-59d9-95cf-953627cd0cf8
+
+	column booking_id
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 304d7a55-8b5b-553c-a3a7-9d2bfaf2e0b6
+		summarizeBy: none
+		sourceColumn: booking_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_date_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: ed4c73f4-8236-5b1a-a0bc-f52106662d8f
+		summarizeBy: none
+		sourceColumn: booking_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column travel_date_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 71280419-6a7d-5e76-aba5-e495e912b5bd
+		summarizeBy: none
+		sourceColumn: travel_date_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column route_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: b25eac4e-02ab-5b27-91e1-ec0fe3422db8
+		summarizeBy: none
+		sourceColumn: route_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 6e1e5d81-0014-5944-ad68-ae7bfce0c866
+		summarizeBy: none
+		sourceColumn: channel_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column fare_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: db595e54-7bae-55a9-9552-13d1c28a79eb
+		summarizeBy: none
+		sourceColumn: fare_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column pos_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: dafd040c-3a66-54d2-b64e-548fc8405f52
+		summarizeBy: none
+		sourceColumn: pos_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column segment_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 8e60d64b-93d3-5495-8cad-bf19a63e3768
+		summarizeBy: none
+		sourceColumn: segment_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column lead_time_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ae0448d-faf9-5fcb-b6f7-851d9f7a36eb
+		summarizeBy: sum
+		sourceColumn: lead_time_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column pax
+		dataType: int64
+		formatString: 0
+		lineageTag: ff07a8de-5d19-5491-8c81-e4e6cbaae4bf
+		summarizeBy: sum
+		sourceColumn: pax
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 2bdb6012-8dde-586b-91ed-1d7acc741388
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column fare_revenue
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: e9711a27-88fc-54dd-9c89-b3689f83b6cf
+		summarizeBy: sum
+		sourceColumn: fare_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column ancillary_revenue
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 791449ba-bd2e-5350-bfd6-438e2d2869d6
+		summarizeBy: sum
+		sourceColumn: ancillary_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column refund_amount
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: b46e0c69-1b45-5a7b-8c6c-f06d61eaf10e
+		summarizeBy: sum
+		sourceColumn: refund_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column distribution_cost
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: c3e2069c-48c2-50aa-b059-8e595ebb8a50
+		summarizeBy: sum
+		sourceColumn: distribution_cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Bucket' = SWITCH ( TRUE (), fact_booking[lead_time_days] <= 7, "0-7", fact_booking[lead_time_days] <= 21, "8-21", fact_booking[lead_time_days] <= 60, "22-60", "61+" )
+		dataType: string
+		lineageTag: 5db10e8f-d77a-5ffb-8787-69a0035f9f77
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_booking = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "fact_booking.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"booking_id", Int64.Type}, {"booking_date_key", Int64.Type}, {"travel_date_key", Int64.Type}, {"route_key", Int64.Type}, {"channel_key", Int64.Type}, {"fare_key", Int64.Type}, {"pos_key", Int64.Type}, {"segment_key", Int64.Type}, {"lead_time_days", Int64.Type}, {"pax", Int64.Type}, {"status", type text}, {"fare_revenue", Currency.Type}, {"ancillary_revenue", Currency.Type}, {"refund_amount", Currency.Type}, {"distribution_cost", Currency.Type}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

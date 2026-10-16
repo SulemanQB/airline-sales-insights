@@ -1,0 +1,39 @@
+table dim_segment
+	lineageTag: 643f4e14-b11d-5e93-83f9-b5590aecda68
+
+	column segment_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 58631ac3-f69b-5d15-b937-07a8f8aaf44a
+		summarizeBy: none
+		sourceColumn: segment_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column segment_code
+		dataType: string
+		lineageTag: b7212dd5-c7c2-5b78-9510-9020fb50d16d
+		summarizeBy: none
+		sourceColumn: segment_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column segment
+		dataType: string
+		lineageTag: e028c8f1-fb53-501a-9708-1b6e516297fa
+		summarizeBy: none
+		sourceColumn: segment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_segment = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "dim_segment.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"segment_key", Int64.Type}, {"segment_code", type text}, {"segment", type text}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

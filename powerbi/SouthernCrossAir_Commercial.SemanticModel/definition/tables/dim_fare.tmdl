@@ -1,0 +1,47 @@
+table dim_fare
+	lineageTag: e7df3363-783a-5ba5-9ac1-b58a913377ab
+
+	column fare_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 9f6c7863-6b83-5076-8b60-c86f2c3d8d1e
+		summarizeBy: none
+		sourceColumn: fare_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column fare_family
+		dataType: string
+		lineageTag: 75a0b70e-632d-54ab-a8d2-797e8fcd4f66
+		summarizeBy: none
+		sourceColumn: fare_family
+
+		annotation SummarizationSetBy = Automatic
+
+	column cabin
+		dataType: string
+		lineageTag: 6ccdf177-aafc-58d7-97ab-1a224e74dcef
+		summarizeBy: none
+		sourceColumn: cabin
+
+		annotation SummarizationSetBy = Automatic
+
+	column refundable
+		dataType: boolean
+		lineageTag: b7da4b94-8f9f-50dc-b9cc-d72d5e62ab97
+		summarizeBy: none
+		sourceColumn: refundable
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_fare = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "dim_fare.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"fare_key", Int64.Type}, {"fare_family", type text}, {"cabin", type text}, {"refundable", type logical}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,153 @@
+table _Measures
+	lineageTag: 2152c8e2-8cf6-53a8-a529-e409965f849e
+
+	measure 'Fare Revenue' = SUM ( fact_booking[fare_revenue] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: abd6e72d-544d-5204-a420-b4ec147d485d
+
+	measure 'Ancillary Revenue' = SUM ( fact_booking[ancillary_revenue] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: f4ae51d3-9d53-5441-997e-8b8813a5d399
+
+	measure 'Total Revenue' = [Fare Revenue] + [Ancillary Revenue]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 70dad04c-1082-5480-9d77-216273c7490d
+
+	measure Refunds = SUM ( fact_booking[refund_amount] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 333d638a-7d6c-5a5a-9311-ab7abc2dcb93
+
+	measure 'Net Revenue' = [Total Revenue] - [Refunds]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 62cb4276-be91-5bf9-9230-57dca67da7f5
+
+	measure 'Distribution Cost' = SUM ( fact_booking[distribution_cost] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e89c340d-05b0-5f85-9078-608f78fb120f
+
+	measure 'Net Revenue After Distribution' = [Net Revenue] - [Distribution Cost]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 46305fd2-8dbc-5c49-bd33-7d1afd9bddff
+
+	measure Bookings = COUNTROWS ( fact_booking )
+		formatString: #,0
+		lineageTag: 72fa4c05-7b6d-5bd6-9e4d-533865334b81
+
+	measure Passengers = SUM ( fact_booking[pax] )
+		formatString: #,0
+		lineageTag: b33bf70a-b0b3-59c6-aa6c-3a0012537b09
+
+	measure 'Avg Booking Value' = DIVIDE ( [Total Revenue], [Bookings] )
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: cad4c5a7-626e-5e78-9c38-12348f67cf47
+
+	measure 'Avg Fare per Pax' = DIVIDE ( [Fare Revenue], [Passengers] )
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 296af023-bb06-58c0-a940-861700071819
+
+	measure RPK = SUMX ( fact_booking, fact_booking[pax] * RELATED ( dim_route[distance_km] ) )
+		formatString: #,0
+		lineageTag: d0f72e7b-ff33-5b15-8b0a-5e5534687970
+
+	measure 'Yield (c/RPK)' = DIVIDE ( [Fare Revenue], [RPK] ) * 100
+		formatString: #,0.00
+		lineageTag: d6dc33d2-5d35-5fae-bc28-fcc7720b00e9
+
+	measure ASK = VAR LastDay = CALCULATE ( MAX ( dim_date[date] ), FILTER ( ALL ( dim_date ), dim_date[date_key] <= MAX ( fact_booking[booking_date_key] ) ) ) VAR Days = COUNTROWS ( FILTER ( dim_date, dim_date[date] <= LastDay && dim_date[date] >= DATE ( 2024, 7, 1 ) ) ) RETURN SUMX ( dim_route, dim_route[daily_seats] * dim_route[distance_km] ) * Days
+		formatString: #,0
+		lineageTag: 9d7b2308-8eb6-5128-ba82-13664a7edd34
+
+	measure 'RASK Proxy (c/ASK)' = DIVIDE ( [Net Revenue], [ASK] ) * 100
+		formatString: #,0.00
+		lineageTag: 128f52a5-d8bc-5419-87ee-574cdf9889a4
+
+	measure 'Channel Share' = DIVIDE ( [Total Revenue], CALCULATE ( [Total Revenue], ALL ( dim_channel ) ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8cd9a814-3a45-5965-a077-9899f4b8505f
+
+	measure 'Booking Share' = DIVIDE ( [Bookings], CALCULATE ( [Bookings], ALL ( dim_channel ) ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d7c71a06-3a39-5967-9457-87d4618dde59
+
+	measure 'NDC Share of Indirect' = DIVIDE ( CALCULATE ( [Bookings], dim_channel[connection] = "NDC" ), CALCULATE ( [Bookings], dim_channel[channel_group] = "Indirect" ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 86d9314f-452d-5f91-a310-f66875d1d356
+
+	measure 'Cost of Sale %' = DIVIDE ( [Distribution Cost], [Total Revenue] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 7f963be0-b17a-508a-9596-c4e09a84e013
+
+	measure 'Cost per Booking' = DIVIDE ( [Distribution Cost], [Bookings] )
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: e5d2a98b-f731-5223-9014-b88642ad26da
+
+	measure 'Ancillary Attach Rate' = DIVIDE ( CALCULATE ( [Bookings], fact_booking[ancillary_revenue] > 0 ), [Bookings] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 212fc4b9-4923-582a-92c0-95c6579fd744
+
+	measure 'Cancellation Rate' = DIVIDE ( CALCULATE ( [Bookings], fact_booking[status] = "Cancelled" ), [Bookings] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: f8a7c0ff-5f1e-59cf-a61f-608f5a096782
+
+	measure 'Target Revenue' = SUM ( fact_target[target_revenue] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 185546a7-4be9-51c1-aa5b-0e6f13e12648
+
+	measure 'Target Attainment' = DIVIDE ( [Total Revenue], [Target Revenue] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 50d2c13f-725c-593f-b75d-510684e46a2f
+
+	measure 'Variance to Target' = [Total Revenue] - [Target Revenue]
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: ffb027a6-5893-5677-93b7-a84507b1e880
+
+	measure 'Revenue LY' = CALCULATE ( [Total Revenue], SAMEPERIODLASTYEAR ( dim_date[date] ) )
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: acbbe1b2-f1fa-5c72-bedd-de82003e8ac9
+
+	measure 'YoY %' = DIVIDE ( [Total Revenue] - [Revenue LY], [Revenue LY] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1e0e8734-3a08-5412-8e3b-301e416f0973
+
+	measure 'Revenue PM' = CALCULATE ( [Total Revenue], DATEADD ( dim_date[date], -1, MONTH ) )
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e3e91d8b-86d5-5f4e-8e84-e6dd9992d48d
+
+	measure 'MoM %' = DIVIDE ( [Total Revenue] - [Revenue PM], [Revenue PM] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: fbc68a05-d93e-5a17-aa30-3afeb450d211
+
+	measure 'Revenue FYTD' = TOTALYTD ( [Total Revenue], dim_date[date], "30/6" )
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 455245a2-b133-5325-93a2-a1100324dcbf
+
+	measure 'Yield YoY %' = DIVIDE ( [Yield (c/RPK)] - CALCULATE ( [Yield (c/RPK)], SAMEPERIODLASTYEAR ( dim_date[date] ) ), CALCULATE ( [Yield (c/RPK)], SAMEPERIODLASTYEAR ( dim_date[date] ) ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1f5181fd-9239-5011-966a-f36bbda0cc6d
+
+	measure 'Avg Lead Time (days)' = AVERAGE ( fact_booking[lead_time_days] )
+		formatString: #,0.0
+		lineageTag: 6237aaef-d510-5154-9121-8460641a014e
+
+	measure 'Passengers by Travel Date' = CALCULATE ( [Passengers], USERELATIONSHIP ( fact_booking[travel_date_key], dim_date[date_key] ) )
+		formatString: #,0
+		lineageTag: 7a762fc2-b4af-534c-9754-55483618c238
+
+	column Dummy
+		dataType: string
+		isHidden
+		lineageTag: 4fc113f1-7c4c-5cdd-925a-aefb16268de7
+		summarizeBy: none
+		sourceColumn: Dummy
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = #table(type table [Dummy = text], {})
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

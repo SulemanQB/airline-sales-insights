@@ -1,0 +1,47 @@
+table dim_pos
+	lineageTag: 1f1ec341-ec56-5c71-bd5a-d5b882d45435
+
+	column pos_key
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 5105b9e1-54f2-52ba-a502-35dbad0df39b
+		summarizeBy: none
+		sourceColumn: pos_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column pos_code
+		dataType: string
+		lineageTag: b2fca6fe-2645-5689-b1b2-9f763fb519be
+		summarizeBy: none
+		sourceColumn: pos_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column pos_country
+		dataType: string
+		lineageTag: 286b6630-b738-5435-8bcf-f7c143659e5f
+		summarizeBy: none
+		sourceColumn: pos_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column pos_region
+		dataType: string
+		lineageTag: 604f1d34-4658-5f6d-94e2-9c30caf2485e
+		summarizeBy: none
+		sourceColumn: pos_region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_pos = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "dim_pos.parquet")),
+				    Typed = Table.TransformColumnTypes(Source, {{"pos_key", Int64.Type}, {"pos_code", type text}, {"pos_country", type text}, {"pos_region", type text}})
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
